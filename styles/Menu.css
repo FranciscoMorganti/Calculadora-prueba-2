@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+*{
+    list-style: none;
+}
+
+.display-menu{
+    position: fixed;
+    color: #222;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-base);
+    bottom: 50px;
+    left: 80px; 
+    box-shadow: 0px 0px 15px var(--color-base);
+    z-index: 100;
+    cursor: pointer;
+}
+
+.menu ul li{
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+    color: var(--color-base);
+    background-color: #222;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    z-index: 50;
+    visibility: hidden;
+}
+
+.cambio-rotacion-y{
+    transform: rotateZ(90deg) rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.reestablecer{
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.contenedor-color-opciones ul li, .contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+    position: absolute;
+    bottom: 50px;
+    visibility: hidden;
+    left: calc(180px + (var(--i) * 70px));
+    color: var(--color-base);
+    background-color: #222;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px var(--color-base);
+    z-index: 25;
+    font-family: 'Nunito', 'Quicksand', sans-serif;
+}
+
+.contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+    font-size: 20px;
+}
+
+.contenedor-color-opciones ul li span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.blanco{
+    background-color: #fff;
+}
+
+.rojo{
+    background-color: #EB0000;
+}
+
+.violeta{
+    background-color: #EB00C0;
+}
+
+.verde{
+    background-color: #00EB10;
+}
+
+.seleccionar-color{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.seleccionar-color .icono{
+    position: absolute;
+    cursor: pointer;
+}
+
+.seleccionar-color input{
+    visibility: hidden;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 600px){
+    .display-menu{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
+
+    .menu ul li{
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .contenedor-color-opciones ul li, .contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+        left: calc(70px + (var(--i) * 45px));              
+    }
+
+    .contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+        font-size: 15px;
+    }
+
+    .contenedor-color-opciones ul li span{
+        width: 25px;
+        height: 25px;
+    }
+
+    .seleccionar-color{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 425px) and (min-height: 580px) and (max-height: 900px){
+    .display-menu{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    .menu ul li{
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .contenedor-color-opciones ul li, .contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+        left: calc(90px + (var(--i) * 60px));              
+    }
+
+    .contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+        font-size: 15px;
+    }
+
+    .contenedor-color-opciones ul li span{
+        width: 30px;
+        height: 30px;
+    }
+
+    .seleccionar-color{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 900px) and (min-height: 320px) and (max-height: 425px){
+    .display-menu{
+        left: 15px;
+        bottom: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
+
+    .menu ul li{
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .contenedor-color-opciones ul li, .contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+        left: calc(70px + (var(--i) * 45px));              
+    }
+
+    .contenedor-rotacion-x ul li, .contenedor-rotacion-y ul li, .contenedor-animacion ul li{
+        font-size: 15px;
+    }
+
+    .contenedor-color-opciones ul li span{
+        width: 25px;
+        height: 25px;
+    }
+
+    .seleccionar-color{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

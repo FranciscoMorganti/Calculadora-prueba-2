@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculadora</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon.ico">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel='stylesheet' href='../styles/App.css'>
+    <link rel='stylesheet' href='../styles/Tecla.css'>
+    <link rel='stylesheet' href='../styles/Pantalla.css'>
+    <link rel='stylesheet' href='../styles/Menu.css'>
+    <link rel='stylesheet' href='../styles/Audios.css'>
+    <script src='../scripts/index.js' type='text/javascript' defer></script>
+    <script src='../scripts/Calculadora.js' type='text/javascript'></script>
+    <script src='../scripts/Pantalla.js' type='text/javascript'></script>
+    <script src='../scripts/Menu.js' type='text/javascript'></script>
+    <script src='../scripts/Audios.js' type='text/javascript'></script>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
+    <script type='module' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
+    <script nomodule src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+</head>
+<body>
+    <div class='contenedor-calculadora'>
+        <div class='contenedor-pantalla'>
+            <div class='pantallaValorActual'></div>
+            <div class='pantallaValorAnterior'></div>
+        </div>
+        <div class='contenedor-teclado'>
+            <div class='fila'>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton borrarTodo'>C</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton borrar'><ion-icon name='backspace-outline'></ion-icon></button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button value='potenciar' class='boton operador'><ion-icon name='chevron-up-outline'></ion-icon></button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton operador' value='dividir'>÷</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+            </div>
+            <div class='fila'>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>7</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>8</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>9</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button value='multiplicar' class='boton operador'><ion-icon name='close-outline'></ion-icon></button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+            </div>
+            <div class='fila'>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>4</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>5</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>6</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button value='restar' class='boton operador'><ion-icon name='remove-outline'></ion-icon></button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+            </div>
+            <div class='fila'>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>1</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>2</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>3</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button value='sumar' class='boton operador'><ion-icon name='add-outline'></ion-icon></button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+            </div>
+            <div class='fila'>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>0</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton invisible'>
+                    <div class='contenedor-before'><button class='boton'></button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button class='boton numero'>.</button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+                <div class='contenedor-boton'>
+                    <div class='contenedor-before'><button value='igual' class='boton operador'><ion-icon name='reorder-two-outline'></ion-icon></button></div>
+                    <div class='contenedor-lados'>
+                        <span style='--i:0'></span>
+                        <span style='--i:1'></span>
+                        <span style='--i:2'></span>
+                        <span style='--i:3'></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='contenedor-menu'>
+        <div class='display-menu'><ion-icon name='apps-outline'></ion-icon></div>
+        <div class='menu'>
+            <ul>
+                <li class='cambio-color'><ion-icon name='color-palette-outline'></ion-icon></li>
+                <div class='contenedor-color-opciones'>
+                    <ul>
+                        <li style='--i:0' class='color-opcion-1'><span class='blanco'></span></li>
+                        <li style='--i:1' class='color-opcion-2'><span class='rojo'></span></li>
+                        <li style='--i:2' class='color-opcion-3'><span class='violeta'></span></li>
+                        <li style='--i:3' class='color-opcion-4'><span class='verde'></span></li>
+                        <li style='--i:4' class='color-opcion-5'>
+                            <label for='seleccionar-color' class='seleccionar-color'>
+                                <ion-icon name='add-outline' class='icono'></ion-icon>
+                                <input type='color' id='seleccionar-color'>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <li class='cambio-rotacion-x'><span class='material-symbols-outlined'>360</span></li>
+                <div class='contenedor-rotacion-x'>
+                    <ul>
+                        <li style='--i:0'>10°</li>
+                        <li style='--i:1'>20°</li>
+                        <li style='--i:2'>30°</li>
+                        <li style='--i:3'>40°</li>
+                        <li style='--i:4'>50°</li>
+                    </ul>
+                </div>
+                <li class='cambio-rotacion-y'><span class='material-symbols-outlined'>360</span></li>
+                <div class='contenedor-rotacion-y'>
+                    <ul>
+                        <li style='--i:0'>30°</li>
+                        <li style='--i:1'>40°</li>
+                        <li style='--i:2'>50°</li>
+                        <li style='--i:3'>60°</li>
+                        <li style='--i:4'>90°</li>
+                    </ul>
+                </div>
+                <li class='cambio-animacion'><ion-icon name='cube-outline'></ion-icon></li>
+                <div class='contenedor-animacion'>
+                    <ul>
+                        <li style='--i:0'>1°</li>
+                        <li style='--i:1'>2°</li>
+                        <li style='--i:2'>3°</li>
+                        <li style='--i:3'>4°</li>
+                        <li style='--i:4'>5°</li>
+                    </ul>
+                </div>
+                <li class='reestablecer'><ion-icon name='reload-outline'></ion-icon></li>
+            </ul>
+        </div>
+    </div>
+    <div class='contenedor-audios'>
+        <div class='boton-audios'><ion-icon name="musical-note-outline"></ion-icon></div>
+    </div>
+</body>
+</html>
